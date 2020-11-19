@@ -3,7 +3,6 @@ package com.darkstar.service.model;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.math.BigDecimal;
-import java.time.Duration;
 
 public class Item {
 
@@ -14,7 +13,7 @@ public class Item {
     @JsonProperty("image_url")
     private String imageUrl;
     @JsonProperty("estimated_completion_time")
-    private Duration estimatedCompletionTime;
+    private String estimatedCompletionTime;
 
     /**
      * Get ref.
@@ -79,11 +78,11 @@ public class Item {
     /**
      * Get estimatedCompletionTime.
      **/
-    public Duration getEstimatedCompletionTime() {
+    public String getEstimatedCompletionTime() {
         return estimatedCompletionTime;
     }
 
-    public Item setEstimatedCompletionTime(final Duration estimatedCompletionTime) {
+    public Item setEstimatedCompletionTime(final String estimatedCompletionTime) {
         this.estimatedCompletionTime = estimatedCompletionTime;
         return this;
     }
