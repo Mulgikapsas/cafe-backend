@@ -7,8 +7,13 @@
 mvn clean quarkus:dev
 ```
 
+# Build container
+```shell script
+mvn clean package
+docker build -t cafe-backend:latest .
+```
 
-# Example
+# Examples
 
 Open http://localhost:8080/api/items in browser
 Or use Swagger http://localhost:8080/swagger-ui in browser
