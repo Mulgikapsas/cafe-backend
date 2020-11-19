@@ -19,7 +19,7 @@ import javax.ws.rs.Produces;
 import static javax.ws.rs.core.MediaType.APPLICATION_JSON;
 
 @Tag(name = "Items service")
-@Path("")
+@Path("items")
 public class ItemEndpoint {
     private static final Logger LOGGER = LoggerFactory.getLogger(ItemEndpoint.class);
 
@@ -27,7 +27,7 @@ public class ItemEndpoint {
     ItemService itemService;
 
     @GET
-    @Path("items")
+    @Path("/")
     @Operation(summary = "Can use it to retrieve menu items for a Cafe")
     @APIResponse(responseCode = "200", content =
     @Content(mediaType = APPLICATION_JSON, schema = @Schema(implementation = Item.class)))

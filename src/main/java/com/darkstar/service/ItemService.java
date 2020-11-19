@@ -18,6 +18,11 @@ public class ItemService {
     @Inject
     PgPool client;
 
+    /**
+     * Retrieve all items for cafe
+     *
+     * @return {@link Item} list
+     */
     public Multi<Item> getItems() {
         return client.query("SELECT payload FROM items;")
                 .execute()
