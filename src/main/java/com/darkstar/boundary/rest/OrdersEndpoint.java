@@ -27,7 +27,7 @@ public class OrdersEndpoint {
     OrderService orderService;
 
     @GET
-    @Path("/orders")
+    @Path("/")
     @Operation(summary = "Retrieve all orders")
     @APIResponse(responseCode = "200", content =
     @Content(mediaType = APPLICATION_JSON, schema = @Schema(implementation = Order.class)))
