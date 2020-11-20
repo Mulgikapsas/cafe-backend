@@ -5,7 +5,9 @@ dnf upgrade -y && \
 dnf install -y java-latest-openjdk-headless && \
 dnf install -y maven && \
 dnf clean all && \
-mkdir -p /opt/app
+mkdir -p /opt/app && \
+pwd && \
+ls &&
 
 RUN find / -name pom.xml
 
