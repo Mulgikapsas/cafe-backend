@@ -3,6 +3,7 @@ FROM fedora:33
 RUN dnf update -y && \
 dnf upgrade -y && \
 dnf install -y java-latest-openjdk-headless && \
+dnf install maven && \
 dnf clean all && \
 mkdir -p /opt/app
 
