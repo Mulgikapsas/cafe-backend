@@ -6,6 +6,8 @@ dnf install -y java-latest-openjdk-headless && \
 dnf clean all && \
 mkdir -p /opt/app
 
+RUN mvn clean package
+
 COPY /target/app-runner.jar /opt/app/
 
 RUN chmod 775 -R /opt/app && \
