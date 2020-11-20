@@ -48,6 +48,16 @@ public class OrderService {
                 .onItem().transform(pgRowSet -> Response.ok(pgRowSet.iterator().next().getLong("id")).build());
     }
 
+    public Uni<Order> getById(final Long id) {
+        return client.preparedQuery("SELECT payload FROM orders WHERE id = $1;")
+                .execute(Tuple.of(id))
+                .onItem().transform(rows -> getOrderObject(rows.iterator().next()))
+                .onFailure().recoverWithItem(error -> {
+                    LOGGER.error("Error when fetching data.", error);
+                    return null;
+                });
+    }
+
     public Uni<Response> updateOrder(final Long id, final Order body) {
         body.setUid(id);
         return client.preparedQuery("UPDATE orders SET payload = $1 WHERE id = $2;")
@@ -68,7 +78,8 @@ public class OrderService {
         return r.nextInt((100000 - 1000) + 1) + 1000;
     }
 
-    public Uni<Response> updateOrder(final Order body) {
-        return null;
+    private Order getOrderObject(final io.vertx.mutiny.sqlclient.Row row) {
+        return row.get(JsonObject.class, 0)
+                .mapTo(Order.class);
     }
 }

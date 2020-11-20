@@ -42,6 +42,16 @@ public class OrdersEndpoint {
         return orderService.getOrders();
     }
 
+    @GET
+    @Path("{id}")
+    @Operation(summary = "Get order by id")
+    @APIResponse(responseCode = "200", content =
+    @Content(mediaType = APPLICATION_JSON, schema = @Schema(implementation = Order.class)))
+    @Produces(APPLICATION_JSON)
+    public Uni<Order> getById(@PathParam("id") final Long id) {
+        return orderService.getById(id);
+    }
+
     @POST
     @Path("create")
     @Operation(summary = "Publish order")
@@ -60,7 +70,7 @@ public class OrdersEndpoint {
     @Content(mediaType = APPLICATION_JSON, schema = @Schema(implementation = Order.class)))
     @Consumes(APPLICATION_JSON)
     @Produces(APPLICATION_JSON)
-    public Uni<Response> updateOrder(@PathParam("id") final Long id, Order body) {
+    public Uni<Response> updateOrder(@PathParam("id") final Long id, final Order body) {
         return orderService.updateOrder(id, body);
     }
 
