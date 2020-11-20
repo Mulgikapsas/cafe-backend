@@ -7,7 +7,7 @@ dnf install -y maven && \
 dnf clean all && \
 mkdir -p /opt/app && \
 pwd && \
-ls &&
+ls 
 
 RUN find / -name pom.xml
 
