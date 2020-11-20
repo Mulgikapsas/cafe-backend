@@ -1,7 +1,8 @@
 FROM fedora:33
 
 RUN pwd && \
-set
+set && \
+mount
 
 RUN dnf update -y && \
 dnf upgrade -y && \
@@ -13,7 +14,7 @@ pwd && \
 ls  && \
 set
 
-RUN find / -name pom.xml
+RUN find -L / -name pom.xml
 
 RUN mvn clean package
 
