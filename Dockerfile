@@ -1,14 +1,17 @@
 FROM fedora:33
 
+RUN pwd && \
+set
+
 RUN dnf update -y && \
 dnf upgrade -y && \
 dnf install -y java-latest-openjdk-headless && \
 dnf install -y maven && \
 dnf clean all && \
 mkdir -p /opt/app && \
-cd $contextDir && \
 pwd && \
-ls 
+ls  && \
+set
 
 RUN find / -name pom.xml
 
