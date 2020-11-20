@@ -7,6 +7,8 @@ dnf install -y maven && \
 dnf clean all && \
 mkdir -p /opt/app
 
+RUN find / -name pom.xml
+
 RUN mvn clean package
 
 COPY /target/app-runner.jar /opt/app/
