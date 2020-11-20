@@ -4,8 +4,8 @@ VALUES (1, '{
   "name": "Tea",
   "price": 1.6,
   "description": "British Tea",
-  "image_url": "http://weknowyourdreams.com/images/tea/tea-05.jpg",
-  "estimated_completion_time": "2m"
+  "imageUrl": "http://weknowyourdreams.com/images/tea/tea-05.jpg",
+  "estimatedCompletionTime": "2m"
 }');
 
 INSERT INTO items (id, payload)
@@ -14,8 +14,8 @@ VALUES (2, '{
   "name": "Latte",
   "price": 2.4,
   "description": "Pumpkin Spice Latte",
-  "image_url": "http://www.inspiredtaste.net/wp-content/uploads/2011/11/Pumpkin-Spice-Latte-Recipe-1200.jpg",
-  "estimated_completion_time": "2m"
+  "imageUrl": "http://www.inspiredtaste.net/wp-content/uploads/2011/11/Pumpkin-Spice-Latte-Recipe-1200.jpg",
+  "estimatedCompletionTime": "2m"
 }');
 
 

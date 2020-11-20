@@ -1,7 +1,5 @@
 package com.darkstar.service.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-
 import java.math.BigDecimal;
 
 public class Item {
@@ -10,9 +8,7 @@ public class Item {
     private String name;
     private BigDecimal price;
     private String description;
-    @JsonProperty("image_url")
     private String imageUrl;
-    @JsonProperty("estimated_completion_time")
     private String estimatedCompletionTime;
 
     /**
