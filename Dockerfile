@@ -6,6 +6,7 @@ dnf install -y java-latest-openjdk-headless && \
 dnf install -y maven && \
 dnf clean all && \
 mkdir -p /opt/app && \
+cd $contextDir && \
 pwd && \
 ls 
 
